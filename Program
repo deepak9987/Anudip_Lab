@@ -1,0 +1,67 @@
+package Demo;
+
+/*Create a Bank class and declare an instance variable named amount of type double.Create parameterized constructor to initialize variable “amount” with value 10000.Create two methods withdraw(double withdrawalAmount) and deposit(double depositAmount).
+Calculate withdrawal based on some condition (using ternary operator) like If amount is sufficient then “withdraw successful” message will be printed on the console and amount should be updated after withdraw. Later on, deposit 5000 in the account balance.
+At the end display total balance on the console. String message = (withdrawalAmount <= amount) ? "Withdrawal successful" : "Insufficient balance";*/
+
+
+public class Bank {
+	double amount;
+	 public Bank(double amount){
+		 this.amount=amount;	
+	 }
+	 public void withdraw(double withdrawalAmount) {
+		 String message = (withdrawalAmount <= amount) ? "Withdrawal successful" : "Insufficient balance";
+		 if(withdrawalAmount<=amount) {
+			 amount=amount-withdrawalAmount;
+			 System.out.println(message);
+		 }	 
+	 }
+	 public void deposit(double depositAmount) {
+			 amount=amount+depositAmount;
+			 System.out.println("Deposit of " + depositAmount + " successful.");
+	 }
+	 public void displayBalance() {
+	        System.out.println("Total balance: " + amount);
+	    }
+	 
+	public static void main(String[] args) {
+		Bank myBank = new Bank(10000); 
+        myBank.withdraw(3000); 
+        myBank.deposit(5000);
+        myBank.displayBalance();
+	}
+
+}
+
+
+/*Withdrawal successful
+Deposit of 5000.0 successful.
+Total balance: 12000.0 */
+
+
+package Demo;
+import java.util.Scanner;
+
+//Write a program to input two numbers and find the maximum between two numbers using the conditional/ternary operator. Sample Input: num1 = 10 num2 = 30
+
+public class FindMaximum{
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("Enter First number");
+		int num1=sc.nextInt();
+		System.out.println("Enter Sec number");
+		int num2=sc.nextInt();
+		int result = (num1>num2)? num1:num2;
+		System.out.println("The Maximum number is: "  + result);
+		
+	}
+}
+
+/*Enter First number
+10
+Enter Sec number
+30
+The Maximum number is: 30*/
+
