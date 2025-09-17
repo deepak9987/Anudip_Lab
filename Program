@@ -65,3 +65,90 @@ Enter Sec number
 30
 The Maximum number is: 30*/
 
+
+Lab2
+
+package Demo;
+
+import java.util.Scanner;
+
+/*Write a program to check leap year using if else. How to check whether a given year
+ is a leap year or not.*/
+
+
+public class LeapYear {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a year to check if it's a leap year: ");
+        int year = scanner.nextInt();
+        
+        if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+        
+        scanner.close();
+    }
+}
+
+
+/*Enter a year to check if it's a leap year: 2016
+2016 is a leap year.*/
+
+package Demo;
+
+/*Write a program to check whether a number is a Strong number or not.
+ Strong number is a special number whose sum of factorial of digits is equal to the
+ original number.*/
+
+import java.util.Scanner;
+
+public class StrongNumber {
+
+    // Method to calculate factorial of a digit
+    public static int factorial(int n) {
+        int fact = 1;
+        for(int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+        return fact;
+    }
+
+    // Method to check if the number is a Strong number
+    public static boolean isStrong(int num) {
+        int originalNumber = num;
+        int sum = 0;
+
+        while(num > 0) {
+            int digit = num % 10;
+            sum += factorial(digit);
+            num = num / 10;
+        }
+
+        return sum == originalNumber;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number to check if it is a Strong number: ");
+        int number = scanner.nextInt();
+
+        if(isStrong(number)) {
+            System.out.println(number + " is a Strong Number.");
+        } else {
+            System.out.println(number + " is not a Strong Number.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+
+/*Enter a number to check if it is a Strong number: 45
+45 is not a Strong Number.*/
+
+
