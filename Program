@@ -147,6 +147,9 @@ public class StrongNumber {
     }
 }
 
+/*Enter a number to check if it is a Strong number: 45
+45 is not a Strong Number.*/
+
 Lab3
 
 package Demo;
@@ -172,9 +175,5 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out
 	at Javaprogram/Demo.ExceptionHandling.main(ExceptionHandling.java:13)*/
 
 
-
-
-/*Enter a number to check if it is a Strong number: 45
-45 is not a Strong Number.*/
 
 
