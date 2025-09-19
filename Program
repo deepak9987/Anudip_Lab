@@ -1,3 +1,4 @@
+Lab1
 package Demo;
 
 /*Create a Bank class and declare an instance variable named amount of type double.Create parameterized constructor to initialize variable “amount” with value 10000.Create two methods withdraw(double withdrawalAmount) and deposit(double depositAmount).
@@ -145,6 +146,31 @@ public class StrongNumber {
         scanner.close();
     }
 }
+
+Lab3
+
+package Demo;
+
+
+/*create a program with a logic that throw 
+ * the ArrayIndexOutOfBoundsException with accessing elements in a array.*/
+public class ExceptionHandling {
+    public static void main(String[] args) {
+        // Declare and initialize an array with 5 elements
+        int[] numbers = {10, 20, 30, 40, 50};
+
+        // Valid access
+        System.out.println("Element at index 2: " + numbers[2]); // prints 30
+
+        // Invalid access: index 5 does not exist (valid indexes are 0 to 4)
+        System.out.println("Element at index 5: " + numbers[5]);
+    }
+}
+
+/*Element at index 2: 30
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at Javaprogram/Demo.ExceptionHandling.main(ExceptionHandling.java:13)*/
+
 
 
 
