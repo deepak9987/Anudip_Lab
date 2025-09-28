@@ -175,5 +175,88 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out
 	at Javaprogram/Demo.ExceptionHandling.main(ExceptionHandling.java:13)*/
 
 
+Lab4
+/*A phone directory holds a list of names with a phone number for each name. It is possible to find the number associated with a given name, and to specify the phone number for a given name. 
+
+ [Hint:use a HashMap to store names as keys and phone numbers as values. The user can choose to find a number by providing a name or add a new name with a phone number. The program runs in a loop until the user chooses to exit.]*/
+import java.util.*;
+
+public class PhoneDirectory {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        HashMap<String, String> directory = new HashMap<>();
+
+        while (true) {
+            System.out.println("\n===== Phone Directory Menu =====");
+            System.out.println("1. Add Contact");
+            System.out.println("2. Find Number by Name");
+            System.out.println("3. Display All Contacts");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+            sc.nextLine();
+
+            switch (choice) {
+                case 1: 
+                    System.out.print("Enter name: ");
+                    String name = sc.nextLine();
+                    System.out.print("Enter phone number: ");
+                    String number = sc.nextLine();
+                    directory.put(name, number);
+                    System.out.println("Contact saved successfully!");
+                    break;
+
+                case 2: // Find Number
+                    System.out.print("Enter name to search: ");
+                    String searchName = sc.nextLine();
+                    if (directory.containsKey(searchName)) {
+                        System.out.println(searchName + " -> " + directory.get(searchName));
+                    } else {
+                        System.out.println(" Contact not found!");
+                    }
+                    break;
+
+                case 3: // Display All
+                    if (directory.isEmpty()) {
+                        System.out.println(" Directory is empty.");
+                    } else {
+                        System.out.println("All Contacts:");
+                        for (Map.Entry<String, String> entry : directory.entrySet()) {
+                            System.out.println(entry.getKey() + " -> " + entry.getValue());
+                        }
+                    }
+                    break;
+
+                case 4: // Exit
+                    System.out.println("Exiting Phone Directory. Goodbye!");
+                    sc.close();
+                    System.exit(0);
+
+                default:
+                    System.out.println(" Invalid choice! Try again.");
+            }
+        }
+    }
+}
+
+
+/*
+===== Phone Directory Menu =====
+1. Add Contact
+2. Find Number by Name
+3. Display All Contacts
+4. Exit
+Enter your choice: 1
+Enter name: Deepak 
+Enter phone number: 9987076290
+Contact saved successfully!
+
+===== Phone Directory Menu =====
+1. Add Contact
+2. Find Number by Name
+3. Display All Contacts
+4. Exit*/
+
+
 
 
